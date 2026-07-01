@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Best Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --brand-blue: #4A7CF7;
+      --icon-circle-size: 70px;
+    }
+
+
+
+     
+
+    .services-badge {
+      display: inline-block;
+      border: 1px solid var(--brand-blue);
+      color: var(--brand-blue);
+      border-radius: 50px;
+      padding: 4px 18px;
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+    }
+
+    .services-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a2340;
+    }
+
+    .services-subtitle {
+      color: #6c757d;
+      font-size: 0.95rem;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      border: 1px solid #e5e9f0;
+      border-radius: 8px;
+      padding: 32px 28px;
+      transition: box-shadow 0.25s ease, border-color 0.25s ease;
+      height: 100%;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 8px 28px rgba(74, 124, 247, 0.12);
+      border-color: #c5d4fb;
+    }
+
+    .icon-circle {
+      width: var(--icon-circle-size);
+      height: var(--icon-circle-size);
+      border-radius: 50%;
+      border: 2px solid var(--brand-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    
+
+    .service-card:hover .icon-circle {
+      background-color: blue;
+      border-color: blue;
+    }
+
+  
+
+    .service-card-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1a2340;
+      margin-bottom: 10px;
+    }
+
+    .service-card-text {
+      font-size: 0.88rem;
+      color: #6c757d;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+
+    .text-blue {
+      color: var(--brand-blue);
+    }
+
+    header nav a {
+      text-decoration: none;
+      color: #fff;
+      padding: 5px;
+      font-size: 13px;
+      display: block;
+      text-transform: capitalize;
+
+    }
+
+    header nav {
+      display: flex;
+    }
+
+    .our-story-section {
+      background-color: #f8f9fa;
+      padding: 80px 0;
+    }
+
+
+    .image-wrapper {
+      position: relative;
+    }
+
+    .image-wrapper::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 160px;
+      height: 160px;
+      background-size: 12px 12px;
+
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    .heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    .heading::before {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 2px;
+      background-color: #1a56db;
+      flex-shrink: 0;
+    }
+
+
+    .story-heading {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.25;
+      margin-bottom: 28px;
+    }
+
+
+    .story-tabs {
+      display: flex;
+      gap: 0;
+      background-color: #e9ecef;
+      border-radius: 4px;
+      padding: 4px;
+      margin-bottom: 24px;
+      width: fit-content;
+    }
+
+    .story-tabs .tab-btn {
+      border: none;
+      background: transparent;
+      padding: 8px 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #555;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .story-tabs .tab-btn.active {
+      background-color: #1a56db;
+      color: #fff;
+    }
+
+    .story-tabs .tab-btn:not(.active):hover {
+      background-color: #dee2e6;
+      color: #111;
+    }
+
+
+    .story-body p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .story-body p span.highlight {
+      color: #1a56db;
+    }
+ 
+    b 
+
+    .section {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    .header {
+      display: inline-block;
+      padding: 8px 22px;
+      border: 1px solid #2f6fd6;
+      color: #2f6fd6;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: lowercase;
+      background: #fff;
+    }
+
+    .section-title {
+      font-size: 44px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 0;
+    }
+
+    .section-subtitle {
+      max-width: 620px;
+      margin: 0 auto;
+      color: #777;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .card {
+      background: #fff;
+    }
+
+    .image {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      height: 225px;
+      background: #eee;
+    }
+
+    .img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #d9d9d9, #f2f2f2);
+      color: #c4b4b4;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .logo {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #34496b;
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 14px 6px 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .name {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #4d5557, #71a5ad);
+      border: 2px solid #fff;
+    }
+
+    .content {
+      padding-top: 18px;
+    }
+
+    .content h5 {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      color: #111;
+    }
+
+    .content p {
+      color: #777;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+ 
+
+
+    .section {
+      width: 100%;
+      min-height: 450px;
+      background: radial-gradient(circle at right, #3867d6 0%, #1e3799 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+
+
+
+
+   
+
+    .content h1 {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+
+   
+
+
+    .btn-get-started {
+      display: inline-block;
+      padding: 12px 30px;
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+
+    .btn-get-started:hover {
+      background-color: #ffffff;
+      color: #1e3799;
+    }
+
+
+    .pricing-label {
+      border: 1px solid #2563eb;
+      color: #2563eb;
+      padding: 8px 25px;
+      border-radius: 20px;
+      display: inline-block;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 45px;
+      margin: 10px 0;
+    }
+
+    .text {
+      color: gray;
+      margin-bottom: 60px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      width: 280px;
+      padding: 30px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .plan {
+      border: 1px solid #2563eb;
+      color: #2563eb;
+      padding: 8px 25px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .exclusive {
+      background: #2563eb;
+      color: white;
+    }
+
+    .price {
+      font-size: 55px;
+      margin: 20px 0;
+    }
+
+    .price span {
+      font-size: 18px;
+    }
+
+    button {
+      background: white;
+      color: #2563eb;
+      border: 1px solid #2563eb;
+      padding: 12px 25px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .middle button {
+      background: #2563eb;
+      color: white;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    ul li {
+      margin: 15px 0;
+      color: #666;
+    }
+
+    ul li i {
+      color: #2563eb;
+      margin-right: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header class="bg-primary p-2" id="header">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h2 class="text-light"> <i class="fa fa-industry "></i>Business</h2>
+      <nav>
+        <a href="">Home</a>
+        <a href="">Services</a>
+        <a href="">Pricing</a>
+        <a href="">Contact</a>
+      </nav>
+      <button type="button" class="btn btn-outline-light"><i class="fa solid fa-bars"></i></button>
+    </div>
+  </header>
+  <section class="bg-primary py-5">
+    <div class="container row mx-auto align-items-center text-light">
+      <div class="col-sm-5 mx-auto my-3">
+        <h1>Lorem ipsum dolor sit.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+        <div class="d-flex gap-3 align-items-center">
+          <button class="btn btn-light"> Get Started</button>
+          <p><button class="bg-white rounded-pill border-0"><i class="fa-solid fa-play"></i></button>
+            <b class="text-white">Watch Video</b>
+
+          </p>
+        </div>
+      </div>
+      <div class="col-sm-6 mx-auto my-3">
+        <div class="container text-center ">
+          <img src="images/hero-image.jpg" alt="" width="100%" class="rounded-3">
+        </div>
+      </div>
+
+  </section>
+  <section class="our-story-section">
+    <div class="container">
+      <div class="row align-items-center g-5 container mx-auto">
+
+
+        <div class="col-lg-6">
+          <div class="image-wrapper">
+            <img src="images/about-img1.jpg" alt="" />
+          </div>
+        </div>
+
+
+        <div class="col-lg-6">
+
+
+          <div class="heading">Our Story</div>
+
+
+          <h2 class="story-heading">
+            Our team comes with the experience and knowledge
+          </h2>
+
+
+          <div class="story-tabs">
+            <button type="button" class="bg-primary text-white tab-btn">Who We Are</button>
+            <button type="button" class="bg-white mx-1 tab-btn">Our Vision</button>
+            <button type="button" class="bg-white mx-1 tab-btn">Our History</button>
+          </div>
+
+
+          <div class="story-body">
+            <div id="who-we-are" class="content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit distinctio itaque officia consectetur
+                corrupti pariatur sequi tenetur dolores exercitationem maxime.
+              </p>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, in.
+              </p>
+            </div>
+
+            <div id="our-vision" class="content" style="display:none;">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae possimus voluptates ea?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum maxime quo expedita perspiciatis
+                voluptas.
+              </p>
+            </div>
+
+            <div id="our-history" class="content" style="display:none;">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum maxime quo expedita perspiciatis
+                voluptas.
+
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum maxime quo expedita perspiciatis
+                voluptas.
+
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section text-center">
+    <div class="container">
+      <span class="services-badge">Services</span>
+      <h2 class="services-title">Our Best Services</h2>
+      <p class="services-subtitle mb-5">
+        There are many variations of passages of Lorem Ipsum
+        available, but
+        the majority have suffered alteration in some form.
+      </p>
+      <div class="row g-4 mb-4 mx-auto container">
+        <div class="col-12 col-md-4">
+          <div class="service-card text-start">
+            <div class="icon-circle">
+              <i class="fa-brands fa-pied-piper-hat fs-2 text-primary"></i>
+
+            </div>
+            <h5 class="service-card-title">
+              Refreshing
+              Design
+            </h5>
+            <p class="service-card-text">
+              Lorem
+              ipsum
+              dolor
+              sit
+              amet,
+              consectetur
+              adipisicing
+              elit.
+              Cupiditate,
+              ea.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="service-card text-start">
+            <div class="icon-circle">
+              <i class="fa-solid fa-suitcase fs-2 text-primary"></i>
+            </div>
+            <h5 class="service-card-title">
+              Solid
+              Bootstrap
+              5</h5>
+            <p class="service-card-text">
+              Lorem
+              ipsum
+              dolor
+              sit amet
+              consectetur
+              adipisicing
+              elit.
+              Consequatur,
+              animi?
+            </p>
+          </div>
+        </div>
+
+
+        <div class="col-12 col-md-4">
+          <div class="service-card text-start">
+            <div class="icon-circle">
+              <i class="fa-solid fa-cloud text-primary fs-2"></i>
+            </div>
+            <h5 class="service-card-title">
+              100+
+              Components
+            </h5>
+            <p class="service-card-text">
+              Lorem
+              ipsum
+              dolor,
+              sit amet
+              consectetur
+              adipisicing
+              elit.
+              Iusto,
+              excepturi!1
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row g-4 mx-auto container">
+
+
+        <div class="col-12 col-md-4">
+          <div class="service-card text-start">
+            <div class="icon-circle">
+              <i class="fa-solid fa-hat-cowboy fs-2 text-primary"></i>
+            </div>
+            <h5 class="service-card-title">
+              Speed
+              Optimized
+            </h5>
+            <p class="service-card-text">
+              Lorem,
+              ipsum
+              dolor
+              sit amet
+              consectetur
+              adipisicing
+              elit.
+              Eaque,
+              non?
+          </div>
+        </div>
+
+
+        <div class="col-12 col-md-4">
+          <div class="service-card text-start">
+            <div class="icon-circle">
+              <i class="fa-solid fa-ship fs-2 text-primary"></i>
+            </div>
+            <h5 class="service-card-title">
+              Fully
+              Customizable
+            </h5>
+            <p class="service-card-text">
+              Lorem
+              ipsum
+              dolor
+              sit amet
+              consectetur
+              adipisicing
+              elit.
+              Iste,
+              unde?
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="service-card text-start">
+            <div class="icon-circle">
+              <i class="fa-solid fa-car fs-2 text-primary"></i>
+            </div>
+            <h5 class="service-card-title">
+              Regular
+              Updates
+            </h5>
+            <p class="service-card-text">
+              Lorem
+              ipsum
+              dolor
+              sit amet
+              consectetur
+              adipisicing
+              elit.
+              Architecto,
+              laudantium!
+
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="text-center">
+      <div class="pricing-label">Pricing</div>
+
+      <h1>Pricing & Plans</h1>
+
+      <p class="text">
+        There are many variations of passages of Lorem Ipsum available,
+        but the majority have suffered alteration in some form.
+      </p>
+    </div>
+
+    <div class="cards">
+
+
+      <div class="card">
+        <div class="plan">Starter</div>
+
+        <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>
+
+        <div class="price">
+          <span>$</span>0<span>/mo</span>
+        </div>
+
+        <button>START FREE TRIAL</button>
+
+        <ul>
+          <li><i class="fa-regular fa-circle-check"></i>Cras justo odio.</li>
+          <li><i class="fa-regular fa-circle-check"></i>Dapibus ac facilisis in.</li>
+          <li><i class="fa-regular fa-circle-check"></i>Morbi leo risus.</li>
+          <li><i class="fa-regular fa-circle-check"></i>Excepteur sint occaecat velit.</li>
+        </ul>
+      </div>
+
+
+      <div class="card middle">
+        <div class="plan exclusive">Exclusive</div>
+
+        <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>
+
+        <div class="price">
+          <span>$</span>99<span>/mo</span>
+        </div>
+
+        <button>START FREE TRIAL</button>
+
+        <ul>
+          <li><i class="fa-regular fa-circle-check"></i>Cras justo odio.</li>
+          <li><i class="fa-regular fa-circle-check"></i>Dapibus ac facilisis in.</li>
+          <li><i class="fa-regular fa-circle-check"></i>Morbi leo risus.</li>
+          <li><i class="fa-regular fa-circle-check"></i>Excepteur sint occaecat velit.</li>
+        </ul>
+      </div>
+
+
+      <div class="card">
+        <div class="plan">Premium</div>
+
+        <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>
+
+        <div class="price">
+          <span>$</span>150<span>/mo</span>
+        </div>
+
+        <button>START FREE TRIAL</button>
+
+        <ul>
+          <li><i class="fa-regular fa-circle-check"></i>Cras justo odio.</li>
+          <li><i class="fa-regular fa-circle-check"></i>Dapibus ac facilisis in.</li>
+          <li><i class="fa-regular fa-circle-check"></i>Morbi leo risus.</li>
+          <li><i class="fa-regular fa-circle-check"></i>Excepteur sint occaecat velit.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+  <section class="section ">
+    <div class="content text-light">
+      <h1 class="">Lorem ipsum dolor sit amet consectetur.</h1>
+      <p class="text-light my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae labore accusamus
+        reprehenderit dicta voluptas
+        voluptate molestias praesentium?</p>
+      <a href="#" class="btn-get-started">GET STARTED</a>
+    </div>
+  </section>
+  <section class=" py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="header">latest news</span>
+        <h2 class="section-title mt-3">Latest News & Blog</h2>
+        <p class="section-subtitle mt-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro.
+        </p>
+      </div>
+      <div class="row mx-auto container">
+        <div class="col-lg-4 col-md-6">
+          <div class="p-2 ">
+            <div class="image">
+              <img src="./images/woman.jpg" alt="">
+              <div class="logo">
+                <div class="name"></div>
+                <span>FERANMI AWOPETU</span>
+              </div>
+            </div>
+            <div class="blog-content">
+              <h6 class="fw-bold my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, est!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="p-2 ">
+            <div class="image">
+              <img src="./images/woman2.jpg" alt="">
+              <div class="logo">
+                <div class="name"></div>
+                <span>FERANMI AWOPETU</span>
+              </div>
+            </div>
+            <div class="blog-content">
+              <h6 class="fw-bold my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, est!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="p-2 ">
+            <div class="image">
+              <img src="./images/woman3.jpg" alt="">
+              <div class="logo">
+                <div class="name"></div>
+                <span>FERANMI AWOPETU</span>
+              </div>
+            </div>
+            <div class="blog-content">
+              <h6 class="fw-bold my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, est!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="clients py-5">
+    <div class="py-3 text-center">
+      <span class="rounded-pill text-primary border border-primary p-2 px-5">Meet our Clients</span>
+      <h3 class="text-center mt-3"> Our Awesome clients</h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="row container mx-auto">
+      <div class="col-12 col-md-8 col-lg-5 mx-auto">
+        <div class="d-flex flex-wrap mx-auto gap-2 justify-content-center">
+          <img class="shadow border p-3 rounded mx-3 " src="images/graygrids.svg" width="120px" alt="">
+          <img class="shadow border p-3 rounded mx-3 " src="images/ayroui.svg" width="120px" alt="">
+          <img class="shadow border p-3 rounded mx-3 " src="images/lineicons.svg" width="120px" alt="">
+          <img class="shadow border p-3 rounded mx-3 " src="images/tailwindtemplates.svg" width="120px" alt="">
+          <img class="shadow border p-3 rounded mx-3 " src="images/uideck.svg" width="120px" alt="">
+          <img class="shadow border p-3 rounded mx-3 " src="images/ecomhtml.svg" width="120px" alt="">
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="contact bg-white">
+    <div class="row container py-5 mx-auto ">
+      <div class="col-sm-4 mx-auto  ">
+        <div class="d-flex my-3 shadow rounded border align-items-center p-2 gap-2">
+          <div class="icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <div class="fa-bold text-primary">Contact</div>
+            <div class="text-secondary">098453727863</div>
+            <div class="text-secondary">yourmail@gmail.com</div>
+          </div>
+        </div>
+        <div class="d-flex my-3 shadow rounded border align-items-center p-2 gap-2">
+          <div class="icon"><i class="fa-solid fa-map-marker"></i></div>
+          <div>
+            <div class="fa-bold text-primary">Address</div>
+            <div class="text-secondary">175 5th Ave, New York, NY 10010</div>
+          </div>
+        </div>
+        <div class="d-flex my-3 shadow rounded border align-items-center p-2 gap-2">
+          <div class="icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <div class="fa-bold text-primary">Schedule</div>
+            <div class="text-secondary">24 Hours/ 7Days Open Office time: 10AM - 5PM</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="border shadow rounded p-3 ">
+          <div class="text-primary fs-6 fw-bold text-center">Get in Touch</div>
+          <div class="text-primary fs-3 fw-bold text-center">Ready to Get Started</div>
+          <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa!</p>
+
+          <div class="d-sm-flex gap-2 my-3">
+            <input type="text" placeholder="Name" class="input form-control rounded-pill my-2 ">
+            <input type="text" placeholder="Mobile-Number" class="form-control rounded-pill my-2 ">
+          </div>
+          <div class="d-sm-flex gap-2 my-3">
+            <input type="email" placeholder="Email" class="form-control rounded-pill my-2 ">
+            <input type="text" placeholder="Subject" class="form-control rounded-pill my-2 ">
+
+          </div>
+          <div class="d-sm-flex gap-2 my-3">
+            <textarea rows="5" placeholder="Message" class="form-control rounded"></textarea>
+          </div>
+          <div class="text-center"><button type="submit" class="btn btn-primary rounded-pill">Send Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="map">
+    <div class="container"><iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d246.25805664875662!2d7.48517734319626!3d9.052004630123765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1782814047524!5m2!1sen!2sng"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  </section>
+  <footer>
+    <section class="container row mx-auto py-5">
+      <div class="col-sm-4">
+        <h3 class="text-primary">Business</h3>
+        <p>
+          <span>@ 2024 Ayro LJI <br>Designed and Developed by <a class="text-primary text-decoration-none">Ayro LI
+            </a><br>Distributed by <a class="text-primary text-decoration-none">Theme Wagon</a></span>
+        </p>
+      </div>
+      <div class="col-sm-2">
+        <h4 class="text-dark">Services</h4>
+        <div>
+          <a href="" class="text-decoration-none d-block my-2" class="text-dark">Marketting</a>
+          <a href="" class="text-decoration-none d-block my-2" class="text-dark">Analytics</a>
+          <a href="" class="text-decoration-none d-block my-2" class="text-dark">Commerce</a>
+          <a href="" class="text-decoration-none d-block my-2" class="text-dark">Insits</a>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <h4 class="text-dark">Support</h4>
+        <div>
+          <a href="" class="text-decoration-none d-block my-2" class="text-dark">Pricing</a>
+          <a href="" class="text-decoration-none d-block my-2" class="text-dark">Documentation</a>
+          <a href="" class="text-decoration-none d-block my-2" class="text-dark">Guides</a>
+          <a href="" class="text-decoration-none d-block my-2" class="text-dark">API Status</a>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <h4 class="text-dark">Subscribe</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        <div class="d-flex border p-1 rounded">
+          <input type="text" placeholder="Email" class="w-100 border-0 p-2">
+          <button class="btn btn-primary"><i class="fa-solid fa-envelope"></i></button>
+        </div>
+      </div>
+
+    </section>
+    <a href="#header" class="btn btn-primary position-fixed bottom-0 end-0 m-3">
+      <i class="fa-solid fa-arrow-up "></i>
+    </a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
